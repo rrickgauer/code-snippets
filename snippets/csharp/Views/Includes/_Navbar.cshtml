@@ -1,0 +1,34 @@
+﻿@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor;
+@inject SharpStudio.Services.Service.Contract.IAuthService AuthService;
+@using Microsoft.AspNetCore.Http.Extensions;
+
+@{
+    var currentUrl = HttpContextAccessor?.HttpContext?.Request?.GetEncodedUrl();
+}
+
+<nav class="navbar navbar-expand-lg bg-primary-subtle" id="navbar-main">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-main-body">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-main-body">
+            <a class="navbar-brand" href="/app">SharpStudio</a>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" href="/app/projects">Projects</a></li>
+            </ul>
+
+            <div class="navbar-nav">
+                @{
+                    if (AuthService.IsClientLoggedIn().Data)
+                    {
+                        <a href="/auth/logout" class="nav-link">Log out</a>
+                    }
+                    else
+                    {
+                        <a href="/auth/login?destination=@currentUrl" class="nav-link">Log in</a>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</nav>

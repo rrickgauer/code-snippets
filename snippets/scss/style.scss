@@ -1,0 +1,62 @@
+input[type=color],
+input[type=date],
+input[type=datetime],
+input[type=datetime-local],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week],
+select:focus,
+textarea {
+    font-size: 16px;
+}
+
+
+.my-shadow {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+.no-focus-outline,
+.close {
+    &,
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
+}
+
+
+.center-page {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+
+.loading-screen {
+    display: flex; /* Hidden by default */
+    //position: fixed; 
+    position: absolute; /* Stay in place */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    z-index: 5; /* Sit on top */
+    /*cursor: progress;*/
+    
+    /* Center the loading content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

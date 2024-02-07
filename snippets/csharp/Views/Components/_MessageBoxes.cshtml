@@ -1,0 +1,88 @@
+<div id="message-box-container">
+
+    @* Standard *@
+    <div class="modal message-box" tabindex="-1" id="message-box-standard">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5">Details</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-body-content"></div>
+                    <div class="modal-body-footer">
+
+                        <button class="btn btn-standard" data-bs-dismiss="modal">Close</button>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    @* Success *@
+    <div class="modal message-box" tabindex="-1" id="message-box-success">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">                
+                <div class="modal-header bg-success bg-opacity-25 text-success-emphasis">
+                    <h1 class="modal-title fs-5">Success</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-body-content">
+                    </div>
+                    <div class="modal-body-footer">
+                        <button class="btn btn-standard" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    @* Error *@
+    <div class="modal message-box" tabindex="-1" id="message-box-error">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-danger bg-opacity-25 text-danger-emphasis">
+                    <h1 class="modal-title fs-5">Error</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-body-content">
+                    </div>
+                    <div class="modal-body-footer">
+                        <button class="btn btn-standard" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal message-box" tabindex="-1" id="message-box-confirm">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5">Details</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-body-content"></div>
+                    <div class="modal-body-footer">
+
+                        <button class="btn btn-success" data-js-confirm></button>
+                        <button class="btn btn-standard" data-bs-dismiss="modal">Cancel</button>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
