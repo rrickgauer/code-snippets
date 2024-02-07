@@ -1,0 +1,51 @@
+@model ExampleLayoutModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <partial name="~/Views/Includes/_Header.cshtml" />
+    @RenderSection("Header", required: false)
+    <title>@Model.Title</title>
+</head>
+<body>
+    <partial name="~/Views/Includes/_Navbar.cshtml" />
+    @RenderSection("PageTop", required: false)
+
+    <div class="container mt-5">
+        <div class="row">
+            
+            @* Navbar *@
+            <div class="col-lg-3 mb-5">
+
+                <div class="card card-body my-shadow">
+                    <ul class="nav nav-pills flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">General</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Extra</a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+
+            @* Page Content *@
+            <div class="col-lg-9">
+                @RenderBody()
+            </div>
+
+        </div>
+    </div>
+
+    @RenderSection("PageBottom", required: false)
+
+    <div class="mb-5"></div>
+
+    <partial name="~/Views/Includes/_Footer.cshtml" />
+
+    @RenderSection("Footer", required: false)
+</body>
+</html>

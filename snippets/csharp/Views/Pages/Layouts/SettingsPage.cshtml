@@ -1,0 +1,17 @@
+@model ExampleLayoutModel<ExamplePageModel>
+
+@{
+    Layout = @"~/Views/Pages/Layouts/_ExampleLayout.cshtml";
+}
+
+
+@section Footer {
+    <script src="~/js/dist/project-settings.general.bundle.js"></script>
+}
+
+
+<!-- Content goes here -->
+<p>@Model.PageModel.UserId</p>
+
+
+
