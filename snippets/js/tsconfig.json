@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+      //"outDir": "./ts/out",
+      //"sourceMap": true,
+      "inlineSourceMap": true,
+      "allowJs": true,
+      "target": "ES6",
+      "moduleResolution": "Bundler",
+      "outDir": "./dist/",
+      "esModuleInterop": true,
+      //"rootDir": "src"
+      //res
+      //"typeRoots": [ "node_modules/@types/" ],
+      //"types": [ "bootstrap" ]
+    },
+    "include": [
+      "./ts/**/*",
+    ],
+    "ts-node": {}
+  }
