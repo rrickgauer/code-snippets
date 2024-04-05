@@ -64,3 +64,15 @@ public class CarEnum(uint value, [CallerMemberName] string name = "") : Enumerat
     public static readonly CarEnum Toyota = new(3);
     public static readonly CarEnum Honda  = new(4);
 }
+
+
+public class WeekDayEnum(string value, [CallerMemberName] string name = "") : Enumeration<string>(value, name)
+{
+    public static readonly WeekDayEnum Sunday    = new("Sunday");
+    public static readonly WeekDayEnum Monday    = new("Monday");
+    public static readonly WeekDayEnum Tuesday   = new("Tuesday");
+    public static readonly WeekDayEnum Wednesday = new("Wednesday");
+    public static readonly WeekDayEnum Thursday  = new("Thursday");
+    public static readonly WeekDayEnum Friday    = new("Friday");
+    public static readonly WeekDayEnum Saturday  = new("Saturday");
+}
