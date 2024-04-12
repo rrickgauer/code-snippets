@@ -7,16 +7,21 @@ public enum AutoInjectionType
     Transient,
 }
 
-[AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]
-public class AutoInjectAttribute : Attribute
+public abstract class AutoInjectBaseAttribute(AutoInjectionType autoInjectionType) : Attribute
 {
-    public AutoInjectionType AutoInjectionType { get; }
-    // public InjectionProject Project { get; } = InjectionProject.Always;
-    public Type? InterfaceType { get; set; }
+    public AutoInjectionType AutoInjectionType { get; protected set; } = autoInjectionType;
+    public abstract Type? ImplementationType { get; }
+}
 
-    public AutoInjectAttribute(AutoInjectionType injectionType, InjectionProject project = InjectionProject.Always)
-    {
-        AutoInjectionType = injectionType;
-        Project = project;
-    }
+[AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]
+public class AutoInjectAttribute(AutoInjectionType autoInjectionType) : AutoInjectBaseAttribute(autoInjectionType)
+{
+    public override Type? ImplementationType => null;
+}
+
+
+[AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]
+public class AutoInjectAttribute<T>(AutoInjectionType autoInjectionType) : AutoInjectBaseAttribute(autoInjectionType)
+{
+    public override Type? ImplementationType => typeof(T);
 }
